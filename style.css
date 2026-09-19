@@ -1,34 +1,46 @@
 /*
-=========================================================
- JF PS4 CUSTOM SKIN — GAMEPAD VIEWER
-=========================================================
+===========================================================
+JF CUSTOM PS4 GAMEPAD VIEWER
+Carcasa:
+JF_DS4_Shell.png
 
- Base:
- JF_DS4_GamepadViewer_Skin.png
-
- El PNG contiene el diseño completo del mando.
- Este CSS solamente coloca las zonas interactivas
- de Gamepad Viewer encima del diseño.
+IMPORTANTE:
+La imagen contiene SOLO la carcasa/diseño.
+Los controles son generados por Gamepad Viewer mediante CSS.
+===========================================================
 */
 
 
-/* =====================================================
-   CONTROLLER
-===================================================== */
+/* =======================================================
+   BASE
+======================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    overflow: hidden;
+}
+
+
+/* =======================================================
+   CONTROLLER / CARCASA
+======================================================= */
 
 .controller.custom {
-    width: 806px;
-    height: 615px;
-
     position: absolute;
+
+    width: 806px;
+    height: 633.5px;
 
     left: 50%;
     top: 50%;
 
     margin-left: -403px;
-    margin-top: -307.5px;
+    margin-top: -316.75px;
 
-    background-image: url("JF_DS4_GamepadViewer_Skin.png");
+    background-image: url("JF_DS4_Shell.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
@@ -37,206 +49,283 @@
 }
 
 
-/* Hide interactive elements when disconnected */
+/* =======================================================
+   DESCONEXIÓN
+======================================================= */
+
 .custom.disconnected div {
     display: none;
 }
 
 
-/* =====================================================
+/* =======================================================
    L2 / R2
-===================================================== */
+======================================================= */
 
 .custom .triggers {
     position: absolute;
 
-    left: 114px;
-    top: 61px;
+    left: 118px;
+    top: 58px;
 
-    width: 578px;
-    height: 92px;
-
-    pointer-events: none;
+    width: 570px;
+    height: 91px;
 }
 
+
+/* Trigger individual */
 
 .custom .trigger {
-    width: 100px;
-    height: 92px;
+    position: relative;
 
-    opacity: 0;
+    width: 92px;
+    height: 91px;
 
-    background: transparent !important;
+    background: linear-gradient(
+        to bottom,
+        #202020 0%,
+        #090909 65%,
+        #000000 100%
+    ) !important;
 
-    border-radius: 25px;
+    border: 2px solid rgba(255,255,255,.18);
+
+    border-radius: 24px;
+
+    opacity: .9;
+
+    box-sizing: border-box;
+
+    transform-origin: center bottom;
 }
 
 
-/* Left L2 */
+/* L2 */
+
 .custom .trigger.left {
     float: left;
 }
 
 
-/* Right R2 */
+/* R2 */
+
 .custom .trigger.right {
     float: right;
 }
 
 
-/* L2 / R2 pressed */
-.custom .trigger.pressed {
-    opacity: 0.32;
+/* Presionado */
 
-    background: rgba(255,255,255,0.9) !important;
+.custom .trigger.pressed {
+    background: linear-gradient(
+        to bottom,
+        #444444 0%,
+        #151515 65%,
+        #050505 100%
+    ) !important;
+
+    border-color: rgba(255,255,255,.75);
 
     box-shadow:
-        0 0 18px rgba(255,255,255,0.9),
-        inset 0 0 12px rgba(0,0,0,0.25);
+        0 0 8px rgba(255,255,255,.7),
+        0 0 20px rgba(255,255,255,.35);
+
+    opacity: 1;
 }
 
 
-/* =====================================================
+/* =======================================================
    L1 / R1
-===================================================== */
+======================================================= */
 
 .custom .bumpers {
     position: absolute;
 
-    left: 228px;
-    top: 137px;
+    left: 226px;
+    top: 127px;
 
-    width: 350px;
-    height: 38px;
-
-    pointer-events: none;
+    width: 354px;
+    height: 42px;
 }
 
+
+/* Bumper */
 
 .custom .bumper {
-    width: 92px;
-    height: 36px;
+    width: 94px;
+    height: 38px;
 
-    opacity: 0;
+    background: #090909 !important;
 
-    background: transparent !important;
+    border: 2px solid rgba(255,255,255,.15);
 
-    border-radius: 15px;
+    border-radius: 13px;
+
+    opacity: .95;
+
+    box-sizing: border-box;
 }
 
 
-/* Left L1 */
 .custom .bumper.left {
     float: left;
 }
 
 
-/* Right R1 */
 .custom .bumper.right {
     float: right;
 }
 
 
-/* L1 / R1 pressed */
-.custom .bumper.pressed {
-    opacity: 1;
+/* Presionado */
 
-    background: rgba(255,255,255,0.18) !important;
+.custom .bumper.pressed {
+    background: #222222 !important;
+
+    border-color: rgba(255,255,255,.8);
 
     box-shadow:
-        0 0 15px rgba(255,255,255,0.9);
+        0 0 8px rgba(255,255,255,.7),
+        0 0 16px rgba(255,255,255,.35);
 }
 
 
-/* =====================================================
+/* =======================================================
    SHARE / OPTIONS
-===================================================== */
+======================================================= */
 
 .custom .arrows {
     position: absolute;
 
-    left: 286px;
-    top: 137px;
+    left: 225px;
+    top: 126px;
 
-    width: 364px;
-    height: 72px;
-
-    pointer-events: none;
+    width: 356px;
+    height: 65px;
 }
 
+
+/* SHARE / OPTIONS */
 
 .custom .back,
 .custom .start {
-    width: 44px;
-    height: 72px;
+    position: absolute;
 
-    opacity: 0;
+    width: 42px;
+    height: 61px;
 
-    background: transparent !important;
+    top: 0;
 
-    border-radius: 16px;
+    background: #080808 !important;
+
+    border: 2px solid rgba(255,255,255,.25);
+
+    border-radius: 13px;
+
+    opacity: .95;
+
+    box-sizing: border-box;
 }
 
+
+/* SHARE */
 
 .custom .back {
-    float: left;
+    left: 0;
 }
 
+
+/* OPTIONS */
 
 .custom .start {
-    float: right;
+    right: 0;
 }
 
 
-/* SHARE / OPTIONS pressed */
+/* Pressed */
 
 .custom .back.pressed,
 .custom .start.pressed {
-    opacity: 1;
+    background: #262626 !important;
 
-    background: rgba(255,255,255,0.22) !important;
+    border-color: rgba(255,255,255,.9);
 
     box-shadow:
-        0 0 15px rgba(255,255,255,0.9);
+        0 0 8px rgba(255,255,255,.8),
+        0 0 16px rgba(255,255,255,.3);
 }
 
 
-/* =====================================================
+/* =======================================================
+   TOUCHPAD
+======================================================= */
+
+.custom .touchpad {
+    position: absolute;
+
+    left: 277px;
+    top: 76px;
+
+    width: 232px;
+    height: 181px;
+
+    background: transparent !important;
+
+    border-radius: 10px;
+
+    z-index: 20;
+}
+
+
+/* Touchpad presionado */
+
+.custom .touchpad.pressed {
+    background: rgba(255,255,255,.13) !important;
+
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,.4),
+        0 0 18px rgba(255,255,255,.35);
+}
+
+
+/* =======================================================
    D-PAD
-===================================================== */
+======================================================= */
 
 .custom .dpad {
     position: absolute;
 
-    left: 74px;
-    top: 173px;
+    left: 72px;
+    top: 157px;
 
-    width: 171px;
-    height: 170px;
+    width: 180px;
+    height: 179px;
 
-    pointer-events: none;
+    z-index: 30;
 }
 
 
-/* Individual D-pad directions */
+/* Flechas */
 
 .custom .face {
     position: absolute;
 
     background: transparent !important;
 
-    opacity: 0;
+    opacity: 1;
 
     box-sizing: border-box;
+
+    border-radius: 10px;
 }
 
 
-/* UP / DOWN */
+/* Arriba / abajo */
 
 .custom .face.up,
 .custom .face.down {
-    width: 47px;
-    height: 62px;
+    width: 56px;
+    height: 67px;
 }
 
 
@@ -252,12 +341,12 @@
 }
 
 
-/* LEFT / RIGHT */
+/* Izquierda / derecha */
 
 .custom .face.left,
 .custom .face.right {
-    width: 62px;
-    height: 47px;
+    width: 67px;
+    height: 56px;
 }
 
 
@@ -273,147 +362,329 @@
 }
 
 
-/* D-pad pressed */
+/* Visual de las flechas */
 
-.custom .face.pressed {
-    opacity: 1;
+.custom .face::before {
+    content: "";
 
-    background: rgba(255,255,255,0.24) !important;
+    position: absolute;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #eeeeee 50%,
+        #cfcfcf 100%
+    );
+
+    border: 3px solid #080808;
 
     box-shadow:
-        0 0 15px rgba(255,255,255,0.9);
-
-    border-radius: 12px;
-}
-
-
-/* =====================================================
-   FACE BUTTONS
-   TRIANGLE / CIRCLE / CROSS / SQUARE
-===================================================== */
-
-.custom .abxy {
-    position: absolute;
-
-    left: 548px;
-    top: 208px;
-
-    width: 165px;
-    height: 160px;
-
-    pointer-events: none;
-}
-
-
-/* Individual buttons */
-
-.custom .button {
-    position: absolute;
-
-    width: 55px;
-    height: 55px;
-
-    opacity: 0;
-
-    background: transparent !important;
-
-    border-radius: 50%;
+        0 2px 5px rgba(0,0,0,.5),
+        inset 0 1px 2px rgba(255,255,255,.9);
 
     box-sizing: border-box;
 }
 
 
-/* TRIANGLE */
+/* UP */
+
+.custom .face.up::before {
+    width: 45px;
+    height: 57px;
+
+    left: 5px;
+    top: 5px;
+
+    border-radius: 14px 14px 8px 8px;
+}
+
+
+/* DOWN */
+
+.custom .face.down::before {
+    width: 45px;
+    height: 57px;
+
+    left: 5px;
+    top: 5px;
+
+    border-radius: 8px 8px 14px 14px;
+}
+
+
+/* LEFT */
+
+.custom .face.left::before {
+    width: 57px;
+    height: 45px;
+
+    left: 5px;
+    top: 5px;
+
+    border-radius: 14px 8px 8px 14px;
+}
+
+
+/* RIGHT */
+
+.custom .face.right::before {
+    width: 57px;
+    height: 45px;
+
+    left: 5px;
+    top: 5px;
+
+    border-radius: 8px 14px 14px 8px;
+}
+
+
+/* Presionado */
+
+.custom .face.pressed::before {
+    background: #ffffff;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.9),
+        0 0 18px rgba(255,255,255,.45);
+}
+
+
+/* =======================================================
+   FACE BUTTONS
+   △ ○ × □
+======================================================= */
+
+.custom .abxy {
+    position: absolute;
+
+    left: 541px;
+    top: 157px;
+
+    width: 184px;
+    height: 181px;
+
+    z-index: 30;
+}
+
+
+/* Botón */
+
+.custom .button {
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #3a3a3a 0%,
+            #1a1a1a 55%,
+            #050505 100%
+        ) !important;
+
+    border: 2px solid rgba(255,255,255,.32);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 3px 5px rgba(0,0,0,.55),
+        inset 0 1px 2px rgba(255,255,255,.12);
+
+    box-sizing: border-box;
+}
+
+
+/* Símbolos */
+
+.custom .button::after {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 32px;
+
+    font-weight: 300;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.8);
+}
+
+
+/* TRIÁNGULO */
 
 .custom .button.y {
-    left: 55px;
+    left: 63px;
     top: 0;
 }
 
+.custom .button.y::after {
+    content: "△";
+}
 
-/* CIRCLE */
+
+/* CÍRCULO */
 
 .custom .button.b {
     right: 0;
-    top: 53px;
+    top: 61px;
+}
+
+.custom .button.b::after {
+    content: "○";
 }
 
 
-/* SQUARE */
+/* CUADRADO */
 
 .custom .button.x {
     left: 0;
-    top: 53px;
+    top: 61px;
+}
+
+.custom .button.x::after {
+    content: "□";
 }
 
 
-/* CROSS */
+/* X */
 
 .custom .button.a {
-    left: 55px;
+    left: 63px;
     bottom: 0;
 }
 
-
-/* Face button pressed */
-
-.custom .button.pressed {
-    opacity: 1;
-
-    background: rgba(255,255,255,0.20) !important;
-
-    box-shadow:
-        0 0 17px rgba(255,255,255,0.95),
-        inset 0 0 9px rgba(255,255,255,0.65);
+.custom .button.a::after {
+    content: "×";
 }
 
 
-/* =====================================================
+/* Presionado */
+
+.custom .button.pressed {
+    background:
+        radial-gradient(
+            circle at 40% 35%,
+            #ffffff 0%,
+            #aaaaaa 15%,
+            #333333 70%,
+            #050505 100%
+        ) !important;
+
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.95),
+        0 0 18px rgba(255,255,255,.45),
+        inset 0 0 8px rgba(255,255,255,.35);
+}
+
+
+/* =======================================================
    ANALOG STICKS
-===================================================== */
-
-/*
-   The PNG already contains the white sticks.
-
-   We keep the Gamepad Viewer stick elements but
-   make them mostly invisible.
-
-   A small indicator is added so movement can still
-   be seen.
-*/
+======================================================= */
 
 .custom .sticks {
     position: absolute;
 
-    left: 233px;
-    top: 315px;
+    left: 225px;
+    top: 270px;
 
-    width: 326px;
-    height: 94px;
+    width: 333px;
+    height: 111px;
 
-    pointer-events: none;
+    z-index: 40;
 }
 
 
-/* Individual stick */
+/* Stick */
 
 .custom .stick {
     position: absolute;
 
-    width: 94px;
-    height: 94px;
+    width: 111px;
+    height: 111px;
 
-    background: transparent !important;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #363636 0%,
+            #171717 50%,
+            #050505 100%
+        ) !important;
 
     border-radius: 50%;
 
-    opacity: 1;
+    border: 4px solid #111111;
 
-    z-index: 10;
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 0 5px rgba(255,255,255,.82),
+        0 4px 8px rgba(0,0,0,.6);
+
+    transform-origin: center center;
 }
 
 
-/* Left stick */
+/* Textura circular interior */
+
+.custom .stick::before {
+    content: "";
+
+    position: absolute;
+
+    left: 17px;
+    top: 17px;
+
+    width: 69px;
+    height: 69px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        inset 0 0 10px rgba(0,0,0,.8);
+}
+
+
+/* Pequeño indicador de dirección */
+
+.custom .stick::after {
+    content: "";
+
+    position: absolute;
+
+    left: 49px;
+    top: 18px;
+
+    width: 9px;
+    height: 20px;
+
+    background: #e5e5e5;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 4px rgba(255,255,255,.8);
+}
+
+
+/* Stick izquierdo */
 
 .custom .stick.left {
     left: 0;
@@ -421,7 +692,7 @@
 }
 
 
-/* Right stick */
+/* Stick derecho */
 
 .custom .stick.right {
     right: 0;
@@ -429,150 +700,130 @@
 }
 
 
-/*
-   Small movement indicator.
+/* Stick presionado */
 
-   This moves together with the stick because
-   Gamepad Viewer applies the stick transform
-   to the .stick element.
-*/
-
-.custom .stick::before {
-    content: "";
-
-    position: absolute;
-
-    width: 12px;
-    height: 12px;
-
-    left: 41px;
-    top: 41px;
-
-    border-radius: 50%;
-
-    background: rgba(0,0,0,0.65);
-
+.custom .stick.pressed {
     box-shadow:
-        0 0 5px rgba(255,255,255,0.7);
+        0 0 0 5px #ffffff,
+        0 0 18px rgba(255,255,255,.7),
+        0 4px 8px rgba(0,0,0,.6);
 }
 
 
-/* Hide the secondary indicator */
-
-.custom .stick::after {
-    display: none !important;
-}
-
-
-/* Stick pressed */
-
-.custom .stick.pressed::before {
-    width: 16px;
-    height: 16px;
-
-    left: 39px;
-    top: 39px;
-
-    background: rgba(255,255,255,0.95);
-
-    box-shadow:
-        0 0 12px rgba(255,255,255,1);
-}
-
-
-/* =====================================================
-   TOUCHPAD
-===================================================== */
-
-.custom .touchpad {
-    position: absolute;
-
-    left: 276px;
-    top: 135px;
-
-    width: 238px;
-    height: 158px;
-
-    background: transparent;
-
-    opacity: 1;
-
-    z-index: 8;
-}
-
-
-/* Touchpad pressed */
-
-.custom .touchpad.pressed {
-    background: rgba(255,255,255,0.12);
-
-    box-shadow:
-        inset 0 0 18px rgba(255,255,255,0.45),
-        0 0 15px rgba(255,255,255,0.5);
-
-    border-radius: 10px;
-}
-
-
-/* =====================================================
-   PLAYSTATION / META BUTTON
-===================================================== */
+/* =======================================================
+   BOTÓN PLAYSTATION
+======================================================= */
 
 .custom .meta {
     position: absolute;
 
     left: 369px;
-    top: 347px;
+    top: 309px;
 
-    width: 50px;
-    height: 50px;
+    width: 61px;
+    height: 61px;
 
-    background: transparent;
+    background:
+        radial-gradient(
+            circle,
+            #252525 0%,
+            #080808 70%,
+            #000000 100%
+        ) !important;
 
-    opacity: 0;
-
-    z-index: 9;
-}
-
-
-.custom .meta.pressed {
-    opacity: 1;
-
-    background: rgba(255,255,255,0.18);
+    border: 2px solid rgba(255,255,255,.25);
 
     border-radius: 50%;
 
-    box-shadow:
-        0 0 15px rgba(255,255,255,0.9);
+    z-index: 50;
 }
 
 
-/* =====================================================
+/* Logo PS */
+
+.custom .meta::after {
+    content: "PS";
+
+    position: absolute;
+
+    left: 0;
+    top: 13px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.8);
+}
+
+
+/* Presionado */
+
+.custom .meta.pressed {
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.9),
+        0 0 18px rgba(255,255,255,.4);
+}
+
+
+/* =======================================================
    QUADRANT
-===================================================== */
+======================================================= */
 
 .custom .quadrant {
-    display: none;
+    display: none !important;
 }
 
 
-/* =====================================================
-   SAFETY
-===================================================== */
+/* =======================================================
+   Z-INDEX
+======================================================= */
 
-.custom .trigger,
-.custom .bumper,
-.custom .back,
-.custom .start,
-.custom .button,
-.custom .face,
-.custom .stick,
-.custom .touchpad,
+.custom .triggers {
+    z-index: 10;
+}
+
+.custom .bumpers {
+    z-index: 15;
+}
+
+.custom .arrows {
+    z-index: 25;
+}
+
+.custom .dpad,
+.custom .abxy {
+    z-index: 30;
+}
+
+.custom .sticks {
+    z-index: 40;
+}
+
+.custom .touchpad {
+    z-index: 45;
+}
+
 .custom .meta {
-    box-sizing: border-box;
+    z-index: 50;
 }
 
 
-/* =====================================================
-   END
-===================================================== */
+/* =======================================================
+   HALF CONTROLLER
+======================================================= */
+
+.custom.half {
+    margin-top: -316.75px;
+}
