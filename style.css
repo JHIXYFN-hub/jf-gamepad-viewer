@@ -1,0 +1,189 @@
+/*
+ JF CUSTOM PS4 SKIN — Gamepad Viewer
+ Base: PS4 / DualShock 4
+ The controller artwork is the supplied JF black/white design.
+ Host style.css and JF_DS4_GamepadViewer_Skin.png in the same public folder.
+*/
+
+.controller.custom {
+    width: 806px;
+    height: 634px;
+    position: relative;
+    background: url("JF_DS4_GamepadViewer_Skin.png") center center / 100% 100% no-repeat;
+}
+
+/* Hide the original artwork pieces; the JF artwork is the complete base layer. */
+.custom .triggers,
+.custom .trigger,
+.custom .bumpers,
+.custom .bumper,
+.custom .abxy,
+.custom .button,
+.custom .sticks,
+.custom .stick,
+.custom .dpad,
+.custom .face,
+.custom .back,
+.custom .start {
+    box-sizing: border-box;
+}
+
+/* Trigger hit areas */
+.custom .triggers {
+    position: absolute;
+    left: 110px;
+    top: 0;
+    width: 586px;
+    height: 145px;
+    pointer-events: none;
+}
+.custom .trigger {
+    position: absolute;
+    top: 0;
+    width: 99px;
+    height: 125px;
+    opacity: 0;
+    border-radius: 35px;
+}
+.custom .trigger.left { left: 0; }
+.custom .trigger.right { right: 0; }
+
+.custom .trigger.pressed {
+    opacity: .28;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 18px rgba(255,255,255,.9);
+}
+
+/* L1 / R1 */
+.custom .bumpers {
+    position: absolute;
+    left: 110px;
+    top: 125px;
+    width: 586px;
+    height: 55px;
+    pointer-events: none;
+}
+.custom .bumper {
+    position: absolute;
+    top: 0;
+    width: 90px;
+    height: 48px;
+    opacity: 0;
+    border-radius: 24px;
+}
+.custom .bumper.left { left: 0; }
+.custom .bumper.right { right: 0; }
+.custom .bumper.pressed {
+    opacity: .25;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 14px rgba(255,255,255,.9);
+}
+
+/* Face buttons */
+.custom .abxy {
+    position: absolute;
+    left: 548px;
+    top: 225px;
+    width: 180px;
+    height: 180px;
+    pointer-events: none;
+}
+.custom .button {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+    border-radius: 50%;
+}
+.custom .button.pressed {
+    opacity: .38;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 18px rgba(255,255,255,.95), inset 0 0 8px rgba(0,0,0,.8);
+}
+.custom .a { left: 61px; bottom: 0; }
+.custom .b { right: 0; top: 61px; }
+.custom .x { left: 0; top: 61px; }
+.custom .y { left: 61px; top: 0; }
+
+/* Analogue sticks */
+.custom .sticks {
+    position: absolute;
+    left: 210px;
+    top: 310px;
+    width: 390px;
+    height: 120px;
+    pointer-events: none;
+}
+.custom .stick {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    border-radius: 50%;
+}
+.custom .stick.left { left: 0; top: 0; }
+.custom .stick.right { right: 0; top: 0; }
+.custom .stick.pressed {
+    opacity: .30;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 20px rgba(255,255,255,.95), inset 0 0 10px rgba(0,0,0,.8);
+}
+
+/* D-pad */
+.custom .dpad {
+    position: absolute;
+    left: 92px;
+    top: 235px;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+}
+.custom .face {
+    position: absolute;
+    opacity: 0;
+    background: transparent;
+}
+.custom .face.up,
+.custom .face.down {
+    width: 48px;
+    height: 58px;
+    left: 51px;
+}
+.custom .face.left,
+.custom .face.right {
+    width: 58px;
+    height: 48px;
+    top: 51px;
+}
+.custom .face.up { top: 0; }
+.custom .face.down { bottom: 0; }
+.custom .face.left { left: 0; }
+.custom .face.right { right: 0; }
+
+.custom .face.pressed {
+    opacity: .34;
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 0 15px rgba(255,255,255,.95);
+    border-radius: 12px;
+}
+
+/* SHARE / OPTIONS remain visible in the artwork.
+   The original hit areas are retained but invisible. */
+.custom .back,
+.custom .start {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Keep the complete JF artwork visible when disconnected. */
+.custom.disconnected {
+    background: url("JF_DS4_GamepadViewer_Skin.png") center center / 100% 100% no-repeat;
+}
+.custom.disconnected div {
+    opacity: 0;
+}
+
+/* Transparent overlay */
+body {
+    background: transparent !important;
+}
