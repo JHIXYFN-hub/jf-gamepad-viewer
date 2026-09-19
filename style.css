@@ -154,19 +154,16 @@
   box-shadow: 0 0 15px rgba(255,255,255,.9);
   border-radius: 12px;
 }
-
-/* Analog sticks.
-   Gamepad Viewer applies the live stick transform inline.
-   The small directional marker rotates with that live transform,
-   so movement remains visible without replacing the JF artwork. */
+/* ANALOG STICKS /
 .custom .sticks {
   position: absolute;
-  left: 224px;
-  top: 489px;
-  width: 360px;
-  height: 105px;
+  left: 232px;
+  top: 340px;
+  width: 347px;
+  height: 94px;
   pointer-events: none;
 }
+
 .custom .stick {
   position: absolute;
   width: 94px;
@@ -176,35 +173,68 @@
   border-radius: 50%;
   z-index: 5;
 }
-.custom .stick.left { left: 0; top: 0; }
-.custom .stick.right { right: 0; top: 0; }
 
-/* Moving cap / direction indicator */
+.custom .stick.left {
+  left: 0;
+  top: 0;
+}
+
+.custom .stick.right {
+  right: 0;
+  top: 0;
+}
+
+/ Stick visual /
 .custom .stick::before {
   content: "";
   position: absolute;
-  left: 19px;
-  top: 19px;
-  width: 56px;
-  height: 56px;
+  left: 4px;
+  top: 4px;
+  width: 86px;
+  height: 86px;
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 34%, #ffffff 0 18%, #eeeeee 45%, #bdbdbd 78%, #777777 100%);
+
+  background: radial-gradient(
+    circle at 38% 34%,
+    #ffffff 0%,
+    #eeeeee 45%,
+    #cfcfcf 75%,
+    #999999 100%
+  );
+
   border: 3px solid #111111;
-  box-shadow: 0 0 0 2px rgba(255,255,255,.8), 0 4px 10px rgba(0,0,0,.55);
+
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.8),
+    0 4px 10px rgba(0,0,0,.55);
 }
 
-/* Direction marker makes the live stick angle obvious. */
+/ Direction indicator /
 .custom .stick::after {
   content: "";
   position: absolute;
+
   left: 43px;
-  top: 24px;
+  top: 14px;
+
   width: 8px;
   height: 20px;
+
   border-radius: 5px;
+
   background: #111111;
+
   box-shadow: 0 0 4px rgba(255,255,255,.45);
 }
+
+/ Stick pressed */
+.custom .stick.pressed::before {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 18px rgba(255,255,255,.95),
+    inset 0 0 10px rgba(0,0,0,.35);
+}
+
 
 /* Clicked stick */
 .custom .stick.pressed::before {
