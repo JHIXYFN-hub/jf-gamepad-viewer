@@ -2,6 +2,7 @@
  JF PS4 CUSTOM SKIN — Gamepad Viewer
  Base artwork: JF_DS4_GamepadViewer_Skin.png
 */
+
 .controller.custom {
   width: 806px;
   height: 633.5px;
@@ -10,14 +11,26 @@
   top: 50%;
   margin-left: -403px;
   margin-top: -316.75px;
-  background: url("JF_DS4_GamepadViewer_Skin.png") center center / 100% 100% no-repeat;
+
+  background: url("JF_DS4_GamepadViewer_Skin.png")
+    center center / 100% 100% no-repeat;
+
   overflow: visible;
 }
 
-/* Keep the Gamepad Viewer elements alive so its JavaScript can update them. */
-.custom.disconnected div { display: none; }
 
-/* L2 / R2 */
+/* Keep the Gamepad Viewer elements alive
+   so its JavaScript can update them. */
+
+.custom.disconnected div {
+  display: none;
+}
+
+
+/* =========================================================
+   L2 / R2
+   ========================================================= */
+
 .custom .triggers {
   position: absolute;
   left: 114px;
@@ -26,6 +39,7 @@
   height: 105px;
   pointer-events: none;
 }
+
 .custom .trigger {
   width: 100px;
   height: 100px;
@@ -33,15 +47,29 @@
   background: none !important;
   border-radius: 28px;
 }
-.custom .trigger.left { float: left; }
-.custom .trigger.right { float: right; }
+
+.custom .trigger.left {
+  float: left;
+}
+
+.custom .trigger.right {
+  float: right;
+}
+
 .custom .trigger.pressed {
   opacity: .32;
   background: rgba(255,255,255,.95) !important;
-  box-shadow: 0 0 18px rgba(255,255,255,.85), inset 0 0 12px rgba(0,0,0,.25);
+
+  box-shadow:
+    0 0 18px rgba(255,255,255,.85),
+    inset 0 0 12px rgba(0,0,0,.25);
 }
 
-/* L1 / R1 */
+
+/* =========================================================
+   L1 / R1
+   ========================================================= */
+
 .custom .bumpers {
   position: absolute;
   left: 114px;
@@ -50,6 +78,7 @@
   height: 34px;
   pointer-events: none;
 }
+
 .custom .bumper {
   width: 100px;
   height: 30px;
@@ -57,15 +86,29 @@
   background: transparent !important;
   border-radius: 14px;
 }
-.custom .bumper.left { float: left; }
-.custom .bumper.right { float: right; }
+
+.custom .bumper.left {
+  float: left;
+}
+
+.custom .bumper.right {
+  float: right;
+}
+
 .custom .bumper.pressed {
   opacity: 1;
-  box-shadow: 0 0 14px rgba(255,255,255,.9);
+
+  box-shadow:
+    0 0 14px rgba(255,255,255,.9);
+
   background: rgba(255,255,255,.18) !important;
 }
 
-/* SHARE / OPTIONS */
+
+/* =========================================================
+   SHARE / OPTIONS
+   ========================================================= */
+
 .custom .arrows {
   position: absolute;
   left: 247px;
@@ -74,6 +117,7 @@
   height: 72px;
   pointer-events: none;
 }
+
 .custom .back,
 .custom .start {
   width: 42px;
@@ -82,16 +126,30 @@
   background: transparent !important;
   border-radius: 18px;
 }
-.custom .back { float: left; }
-.custom .start { float: right; }
+
+.custom .back {
+  float: left;
+}
+
+.custom .start {
+  float: right;
+}
+
 .custom .back.pressed,
 .custom .start.pressed {
   opacity: 1;
+
   background: rgba(255,255,255,.16) !important;
-  box-shadow: 0 0 14px rgba(255,255,255,.8);
+
+  box-shadow:
+    0 0 14px rgba(255,255,255,.8);
 }
 
-/* Face buttons — keep the artwork underneath; add an input highlight on press. */
+
+/* =========================================================
+   FACE BUTTONS
+   ========================================================= */
+
 .custom .abxy {
   position: absolute;
   left: 604px;
@@ -100,26 +158,54 @@
   height: 165px;
   pointer-events: none;
 }
+
 .custom .button {
   position: absolute;
   width: 54px;
   height: 54px;
   opacity: 0;
+
   background: transparent !important;
+
   border-radius: 50%;
   box-sizing: border-box;
 }
+
 .custom .button.pressed {
   opacity: 1;
-  background: rgba(255,255,255,.18) !important;
-  box-shadow: 0 0 17px rgba(255,255,255,.95), inset 0 0 9px rgba(255,255,255,.65);
-}
-.custom .a { left: 49px; bottom: 0; }
-.custom .b { right: 0; top: 55px; }
-.custom .x { left: 0; top: 55px; }
-.custom .y { left: 49px; top: 0; }
 
-/* D-pad — transparent at rest; pressed direction lights up. */
+  background: rgba(255,255,255,.18) !important;
+
+  box-shadow:
+    0 0 17px rgba(255,255,255,.95),
+    inset 0 0 9px rgba(255,255,255,.65);
+}
+
+.custom .a {
+  left: 49px;
+  bottom: 0;
+}
+
+.custom .b {
+  right: 0;
+  top: 55px;
+}
+
+.custom .x {
+  left: 0;
+  top: 55px;
+}
+
+.custom .y {
+  left: 49px;
+  top: 0;
+}
+
+
+/* =========================================================
+   D-PAD
+   ========================================================= */
+
 .custom .dpad {
   position: absolute;
   left: 111px;
@@ -128,127 +214,169 @@
   height: 155px;
   pointer-events: none;
 }
+
 .custom .face {
   position: absolute;
+
   background: transparent !important;
   opacity: 0;
+
   box-sizing: border-box;
 }
+
 .custom .face.up,
 .custom .face.down {
   width: 44px;
   height: 57px;
 }
+
 .custom .face.left,
 .custom .face.right {
   width: 57px;
   height: 44px;
 }
-.custom .face.up { left: 53px; top: 0; }
-.custom .face.down { left: 53px; bottom: 0; }
-.custom .face.left { left: 0; top: 55px; }
-.custom .face.right { right: 0; top: 55px; }
+
+.custom .face.up {
+  left: 53px;
+  top: 0;
+}
+
+.custom .face.down {
+  left: 53px;
+  bottom: 0;
+}
+
+.custom .face.left {
+  left: 0;
+  top: 55px;
+}
+
+.custom .face.right {
+  right: 0;
+  top: 55px;
+}
+
 .custom .face.pressed {
   opacity: 1;
+
   background: rgba(255,255,255,.22) !important;
-  box-shadow: 0 0 15px rgba(255,255,255,.9);
+
+  box-shadow:
+    0 0 15px rgba(255,255,255,.9);
+
   border-radius: 12px;
 }
-/* ANALOG STICKS /
+
+
+/* =========================================================
+   ANALOG STICKS
+   ========================================================= */
+
+/*
+   The actual JF artwork already contains the white
+   analog sticks.
+
+   Gamepad Viewer still needs invisible/interactive
+   stick elements so JavaScript can detect movement.
+
+   The CSS below places the interactive sticks directly
+   over the artwork.
+*/
+
 .custom .sticks {
   position: absolute;
-  left: 232px;
-  top: 340px;
-  width: 347px;
+
+  /* Position of the two physical sticks in the artwork */
+  left: 294px;
+  top: 329px;
+
+  width: 253px;
   height: 94px;
+
   pointer-events: none;
 }
 
+
+/* Individual stick */
+
 .custom .stick {
   position: absolute;
+
   width: 94px;
   height: 94px;
-  opacity: 1;
+
+  /*
+     IMPORTANT:
+     The visual cap is hidden because the real
+     white stick is already part of the PNG.
+  */
+
+  opacity: 0;
+
   background: transparent !important;
+
   border-radius: 50%;
+
   z-index: 5;
+
+  pointer-events: auto;
 }
+
+
+/* Left stick */
 
 .custom .stick.left {
   left: 0;
   top: 0;
 }
 
+
+/* Right stick */
+
 .custom .stick.right {
   right: 0;
   top: 0;
 }
 
-/ Stick visual /
-.custom .stick::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 4px;
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
 
-  background: radial-gradient(
-    circle at 38% 34%,
-    #ffffff 0%,
-    #eeeeee 45%,
-    #cfcfcf 75%,
-    #999999 100%
-  );
+/*
+   Hide the artificial stick graphics.
 
-  border: 3px solid #111111;
+   The PNG already contains the real sticks,
+   so we don't want extra circles appearing.
+*/
 
-  box-shadow:
-    0 0 0 2px rgba(255,255,255,.8),
-    0 4px 10px rgba(0,0,0,.55);
-}
-
-/ Direction indicator /
+.custom .stick::before,
 .custom .stick::after {
-  content: "";
-  position: absolute;
-
-  left: 43px;
-  top: 14px;
-
-  width: 8px;
-  height: 20px;
-
-  border-radius: 5px;
-
-  background: #111111;
-
-  box-shadow: 0 0 4px rgba(255,255,255,.45);
-}
-
-/ Stick pressed */
-.custom .stick.pressed::before {
-  box-shadow:
-    0 0 0 2px #fff,
-    0 0 18px rgba(255,255,255,.95),
-    inset 0 0 10px rgba(0,0,0,.35);
+  display: none !important;
 }
 
 
-/* Clicked stick */
-.custom .stick.pressed::before {
-  box-shadow: 0 0 0 2px #fff, 0 0 18px rgba(255,255,255,.95), inset 0 0 10px rgba(0,0,0,.35);
+/*
+   When the stick is clicked/pressed,
+   keep the artwork unchanged.
+*/
+
+.custom .stick.pressed {
+  opacity: 0;
 }
 
-/* Touchpad / system button are part of the background artwork. */
+
+/* =========================================================
+   TOUCHPAD / SYSTEM BUTTON
+   ========================================================= */
+
 .custom .quadrant,
 .custom .touchpad,
 .custom .meta {
   pointer-events: none;
 }
 
-/* Do not force the old skin's scale or hidden/half-controller rules. */
+
+/* =========================================================
+   HALF CONTROLLER
+   ========================================================= */
+
 .custom.half {
   margin-top: -316.75px;
 }
